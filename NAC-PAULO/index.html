@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <p>Banco ABR3</p>
+    </div>
+
+    <form action="">
+
+        <div class="wrapper-input">
+            <div class="input-form">
+                <label for="nome">Digite seu nome: </label>
+                <input type="text" name="nome" id="nome" placeholder="Ex: Raphael Santantonio" />
+            </div>
+        </div>
+
+        <div class="wrapper-input">
+            <div class="input-form">
+                <label for="cpf">Digite seu CPF:</label>
+                <input type="text" name="cpf" id="cpf" placeholder="Ex: 012.345.678-90" onkeypress="mascaraCPF(this)"
+                    maxlength="14">
+
+            </div>
+        </div>
+
+
+
+        <div class="wrapper-input">
+            <div class="input-form">
+                <label for="nr-conta">N° Conta: </label>
+                <input type="text" name="nr-conta" id="nr-conta" maxlength="7" onkeypress="mascaraNConta(this)"
+                    placeholder="Ex: 12345-0">
+            </div>
+        </div>
+
+        <div class="wrapper-input">
+            <div class="input-form">
+                <label for="">Tipo da conta</label>
+                <select name="tipoConta" id="tipoConta">
+                    <option value="corrente">Corrente</option>
+                    <option value="poupanca">Poupança</option>
+                    <option value="especial">Especial</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="wrapper-input">
+            <div class="input-form">
+                <label for="renda">Renda:</label>
+                <input type="text" name="renda" id="renda" placeholder="Ex: 5000,00">
+            </div>
+
+        </div>
+
+        <div class="wrapper-input">
+            <div class="input-form">
+                <label for="numero">Número:</label>
+                <input type="number" name="numero" id="numero" placeholder="Ex: 1234">
+
+            </div>
+        </div>
+        <div class="wrapper-input">
+            <div class="input-form">
+                <label for="endereco">Endereço:</label>
+                <input type="text" name="endereco" id="endereco" placeholder="Ex: Estrada João Ribeiro" maxlength="100">
+            </div>
+        </div>
+
+
+        <div class="input-form">
+            <button>Cadastrar</button>
+        </div>
+
+    </form>
+
+        <span class="erro"></span>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
