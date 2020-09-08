@@ -74,9 +74,7 @@ function submit(){
     let renda = document.querySelector('#renda');
     let numero = document.querySelector('#numero');
     let endereco = document.querySelector('#endereco');
-    let erros = []
-
-    
+    let erros = [] 
     
     form.addEventListener('submit', function(e){
         e.preventDefault();
@@ -88,7 +86,17 @@ function submit(){
         erros.push(contaValor(tipoConta.value, renda.value));
         let erro = document.querySelector('.erro');
     
-       console.log(erros)
+        for (let i = 0; i < erros.length; i++) {
+        
+           let span = document.createElement('p');
+
+           span.innerHTML = erros[i];
+           
+           erro.appendChild(span)
+        }
+
+        
+
     });
 }
 
