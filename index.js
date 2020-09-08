@@ -17,10 +17,9 @@ function mascaraNConta(NContaListener){
 }
 
 function validaTudo(){
-    var caracterNome = /^([0-9_\-\.@])$/;
 
     if(cpf.length > 14 || nome.value == "" || 
-    caracterNome.test(nome.value) == false || tipoConta === 'corrente' && renda > 300 || 
+        tipoConta === 'corrente' && renda > 300 || 
     tipoConta === 'poupanca' && renda > 300 ||  tipoConta === 'especial' && renda > 20900 ||
     tipoConta === 'corrente' && renda < 20900 || tipoConta === 'poupanca' && renda < 20900 ||
     numero.length > 0 || numero.length < 6 || numero.value == "" || cpf.value == "" || renda.value == "")
@@ -40,7 +39,7 @@ function validaTudo(){
         }
 
         //Validacao Nome
-        if(nome.value == "" || caracterNome.test(nome.value) == false){
+        if(nome.value == "" || nome.length < 3){
             return "Nome invalido"
         }
 
