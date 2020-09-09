@@ -18,14 +18,14 @@ function mascaraNConta(NContaListener){
 
 function validaTudo(){
 
-    if(cpf.length > 14 || nome.value == "" || 
-     nome.value.length < 3 ||   tipoConta === 'corrente' && renda > 300 || 
-    tipoConta === 'poupanca' && renda > 300 ||  tipoConta === 'especial' && renda > 20900 ||
-    tipoConta === 'corrente' && renda < 20900 || tipoConta === 'poupanca' && renda < 20900 ||
+    if(cpf.length > 14 || nome.value == "" ||
+    nome.value.length < 3 || tipoConta === 'corrente' && renda < 300 || 
+    tipoConta.value === 'poupanca' && renda.value < 300 ||  tipoConta.value === 'especial' && renda.value > 20900 ||
+    tipoConta.value === 'corrente' && renda.value > 20900 || tipoConta.value === 'poupanca' && renda.value > 20900 ||
     numero.length > 0 || numero.length < 6 || numero.value == "" || cpf.value == "" || renda.value == "")
     {
         //Validacao campos vazios
-        if(numero.value == "" || cpf.value == "" || renda.value == "" || nome.value == "" || renda.value == ""){
+        if(cpf.value == "" || renda.value == "" || nome.value == "" || renda.value == ""){
             return "Falta de preenchimento de dados"
         }
         //Validacao CPF
@@ -34,7 +34,7 @@ function validaTudo(){
         }
 
         //Validacao Numero
-        if(numero.length < 0 || numero.length > 6){
+        if(numero.value.length < 0 || numero.value.length > 6 || numero.value == ""){
             return "Numero invalido"
         }
 
@@ -44,15 +44,17 @@ function validaTudo(){
         }
 
         //Validacao Tipo de conta e renda
-        if(tipoConta === 'corrente' && renda < 300 || tipoConta === 'poupanca' && renda < 300 ){
+        if(tipoConta.value === 'corrente' && renda.value < 300 || 
+            tipoConta.value === 'poupanca' && renda.value < 300 ){
             return 'Você deverá possuir uma renda acima de 300 pseudo moedas';
         }
 
-        if(tipoConta === 'especial' && renda < 20900){
+        if(tipoConta.value === 'especial' && renda.value < 20900){
             return 'Você precisa ter uma renda de no mínimo 20900 pseudo moedas para criar uma conta especial' ;
         }
 
-        if(tipoConta === 'corrente' && renda > 20900 || tipoConta === 'poupanca' && renda > 20900 ){
+        if(tipoConta.value === 'corrente' && renda.value > 20900 || 
+            tipoConta.value === 'poupanca' && renda.value > 20900 ){
             return 'Você possui uma renda acima do esperado para uma conta corrente ou poupança'
         }
     }
