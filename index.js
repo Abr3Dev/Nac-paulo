@@ -19,7 +19,7 @@ function mascaraNConta(NContaListener){
 function validaTudo(){
 
     if(cpf.length > 14 || nome.value == "" ||
-    nome.value.length < 3 || tipoConta === 'corrente' && renda < 300 || 
+    nome.value.length < 3 || tipoConta.value === 'corrente' && renda.value < 300 || 
     tipoConta.value === 'poupanca' && renda.value < 300 ||  tipoConta.value === 'especial' && renda.value > 20900 ||
     tipoConta.value === 'corrente' && renda.value > 20900 || tipoConta.value === 'poupanca' && renda.value > 20900 ||
     numero.length > 0 || numero.length < 6 || numero.value == "" || cpf.value == "" || renda.value == "")
